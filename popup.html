@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanbanize Title Updater</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎯 Kanbanize Title Updater</h1>
+      <p>Update card titles recursively across parent-child hierarchies</p>
+    </div>
+    <div class="config-section" id="configSection">
+      <div class="input-group">
+        <label for="apiKey">API Endpoint</label>
+        <input type="text" id="apiEP" placeholder="Enter your Kanbanize Endpoint url">
+      </div>
+      <div class="input-group">
+        <label for="apiKey">API Key</label>
+        <input type="password" id="apiKey" placeholder="Enter your Kanbanize API key">
+      </div>
+      <button class="btn" id="loadBoardsBtn">Load Boards</button>
+    </div>
+    <div id="messageArea"></div>
+    <div id="boardSection" class="board-list hidden">
+      <h2 class="board-title">Select a Board <span id="settingsBtn" class="btn btn-small">⚙</span></h2>
+      <div id="boardList"></div>
+    </div>
+    <div id="cardSection" class="card-list hidden">
+      <h2>Cards</h2>
+      <div id="cardList"></div>
+    </div>
+  </div>
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <h3>Edit Card Title</h3>
+      <div class="input-group">
+        <label>Current Title</label>
+        <input type="text" id="currentTitle" readonly style="background: #f0f0f0;">
+      </div>
+      <div class="input-group">
+        <label>New Title</label>
+        <input type="text" id="newTitle">
+      </div>
+      <div class="modal-buttons">
+        <button class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+        <button class="btn" id="saveTitleBtn">Update (Recursive)</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
