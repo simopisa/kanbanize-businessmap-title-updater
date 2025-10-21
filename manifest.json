@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Kanbanize Title Updater",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Update Kanbanize card titles recursively across parent-child hierarchies",
   "permissions": [
     "storage"
@@ -12,6 +12,17 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.kanbanize.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
