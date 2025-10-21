@@ -27,6 +27,11 @@ A powerful Chrome extension for managing hierarchical card titles in Kanbanize. 
 
 ```
 kanbanize-title-updater/
+├── icons
+    ├── icon16.png
+    ├── icon32.png
+    ├── icon64.png
+    └── icon128.png
 ├── manifest.json
 ├── popup.html
 ├── popup.css
